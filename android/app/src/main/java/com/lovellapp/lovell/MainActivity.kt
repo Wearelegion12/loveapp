@@ -1,4 +1,4 @@
-package com.lovell
+package com.lovellapp.lovell  // Updated from com.lovell to com.lovellapp.lovell
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate

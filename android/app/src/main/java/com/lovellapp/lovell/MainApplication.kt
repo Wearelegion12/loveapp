@@ -1,4 +1,4 @@
-package com.lovell
+package com.lovellapp.lovell  // Updated from com.lovell to com.lovellapp.lovell
 
 import android.app.Application
 import com.facebook.react.PackageList
