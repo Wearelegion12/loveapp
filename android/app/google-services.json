@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "637399859230",
+    "project_id": "lovell-6964a",
+    "storage_bucket": "lovell-6964a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:637399859230:android:16d5fe8ff24e4b05c8ee0f",
+        "android_client_info": {
+          "package_name": "com.lovellapp.lovell"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6YAZ12IdPFRvoxSi0zRQYetCchbXqrhk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
