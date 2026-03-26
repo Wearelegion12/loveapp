@@ -16,10 +16,13 @@
   },
   "devDependencies": {
     "@react-native-community/cli": "latest",
+    "@react-native/babel-preset": "^0.84.1",
+    "@react-native/metro-config": "^0.84.1",
     "@react-native/typescript-config": "^0.84.1",
     "@types/jest": "^30.0.0",
     "@types/react": "^19.2.14",
     "@types/react-native": "^0.72.8",
+    "metro-react-native-babel-preset": "^0.77.0",
     "typescript": "^5.9.3"
   }
 }
