@@ -1,14 +1,4 @@
 {
-  "name": "lovell",
-  "version": "1.0.0",
-  "private": true,
-  "scripts": {
-    "android": "react-native run-android",
-    "ios": "react-native run-ios",
-    "lint": "eslint .",
-    "start": "react-native start",
-    "test": "jest"
-  },
   "dependencies": {
     "@react-native-async-storage/async-storage": "1.23.1",
     "@react-navigation/native": "^6.1.9",
@@ -43,8 +33,5 @@
     "prettier": "^2.8.8",
     "react-test-renderer": "18.2.0",
     "typescript": "^5.4.5"
-  },
-  "engines": {
-    "node": ">=18"
   }
 }
