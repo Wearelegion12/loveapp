@@ -4,8 +4,8 @@ buildscript {
         minSdkVersion = 24
         compileSdkVersion = 35
         targetSdkVersion = 35
-        ndkVersion = "26.1.10909125"  // Updated from 27 to 26 for better compatibility
-        kotlinVersion = "1.9.24"  // Updated to latest stable
+        ndkVersion = "27.1.12297006"
+        kotlinVersion = "1.9.22"
     }
     repositories {
         google()
@@ -24,7 +24,5 @@ allprojects {
         google()
         mavenCentral()
         maven { url 'https://www.jitpack.io' }
-        // Add this for React Native 0.75+
-        maven { url 'https://react-native.org/repo' }
     }
 }
