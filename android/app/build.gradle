@@ -78,6 +78,9 @@ react {
     //
     //   The list of flags to pass to the Hermes compiler. By default is "-O", "-output-source-map"
     // hermesFlags = ["-O", "-output-source-map"]
+    
+    // Enable Hermes engine - reads from gradle.properties
+    enableHermes = hermesEnabled.toBoolean()
 
     /* Autolinking */
     autolinkLibrariesWithApp()
@@ -104,24 +107,24 @@ def jscFlavor = 'io.github.react-native-community:jsc-android:2026004.+'
 android {
     ndkVersion rootProject.ext.ndkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
-    compileSdk rootProject.ext.compileSdkVersion
-
+    compileSdk 36  // CHANGED: Updated from 35 to 36
+    
     namespace "com.lovellapp.lovell"
     defaultConfig {
         applicationId "com.lovellapp.lovell"
         minSdkVersion rootProject.ext.minSdkVersion
-        targetSdkVersion rootProject.ext.targetSdkVersion
+        targetSdkVersion 35  // Keep at 35 for now, can update to 36 later
         versionCode 1
         versionName "1.0"
     }
     
-    // ADD THIS SECTION - Java 17 compatibility
+    // Java 17 compatibility
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
     }
     
-    // ADD THIS SECTION - Kotlin compatibility
+    // Kotlin compatibility
     kotlinOptions {
         jvmTarget = "17"
     }
@@ -161,6 +164,10 @@ dependencies {
     // implementation 'com.google.firebase:firebase-storage'
     // implementation 'com.google.firebase:firebase-messaging'
 
-    // Simplified dependency - React Native Gradle Plugin handles Hermes automatically
-    // The plugin will add the appropriate Hermes or JSC dependency based on your configuration
+    // Hermes or JSC dependency - handled by React Native Gradle Plugin based on enableHermes setting
+    if (hermesEnabled.toBoolean()) {
+        implementation("com.facebook.react:hermes-android")
+    } else {
+        implementation jscFlavor
+    }
 }
