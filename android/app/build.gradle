@@ -33,6 +33,16 @@ apply plugin: 'com.google.gms.google-services'
 
 react {
     autolinkLibrariesWithApp()
+    
+    // Disable codegen for now
+    autolinkLibrariesWithApp {
+        // Exclude problematic packages from codegen
+        exclude = [
+            "@react-native-async-storage/async-storage",
+            "react-native-gesture-handler",
+            "react-native-vector-icons"
+        ]
+    }
 }
 
 def enableProguardInReleaseBuilds = false
