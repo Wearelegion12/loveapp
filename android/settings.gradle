@@ -1,6 +1,26 @@
-pluginManagement { includeBuild("../node_modules/@react-native/gradle-plugin") }
-plugins { id("com.facebook.react.settings") }
-extensions.configure(com.facebook.react.ReactSettingsExtension){ ex -> ex.autolinkLibrariesFromCommand() }
+pluginManagement { 
+    includeBuild("../node_modules/@react-native/gradle-plugin") 
+}
+
+plugins { 
+    id("com.facebook.react.settings") 
+}
+
+extensions.configure(com.facebook.react.ReactSettingsExtension) { ex ->
+    if (System.getenv('EXPO_USE_COMMUNITY_AUTOLINKING') == '1') {
+        ex.autolinkLibrariesFromCommand()
+    } else {
+        def command = [
+            'node',
+            '--no-warnings',
+            '--eval',
+            'require(require.resolve(\'@react-native-community/cli\', { paths: [require.resolve(\'react-native/package.json\')] })).bin',
+            'config'
+        ]
+        ex.autolinkLibrariesFromCommand(command)
+    }
+}
+
 rootProject.name = 'lovell'
 include ':app'
 includeBuild('../node_modules/@react-native/gradle-plugin')
