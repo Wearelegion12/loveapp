@@ -12,13 +12,8 @@
     "resolveJsonModule": true,
     "noEmit": true,
     "isolatedModules": true,
-    "baseUrl": ".",
-    "paths": {
-      "*": ["node_modules/*"]
-    }
-    // Remove the "types" array if you don't have jest installed
-    // Or install jest types if you're using jest for testing
+    "baseUrl": "."
   },
-  "include": ["src/**/*", "App.tsx"],
+  "include": ["**/*.ts", "**/*.tsx", "App.tsx"],
   "exclude": ["node_modules", "babel.config.js", "metro.config.js", "jest.config.js"]
 }
