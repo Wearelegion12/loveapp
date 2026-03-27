@@ -1,4 +1,3 @@
-// src/screens/auth/SignUpScreen.tsx
 import React, { useState } from 'react';
 import {
   View,
@@ -17,13 +16,13 @@ type Props = {
   navigation: SignUpScreenNavigationProp;
 };
 
-export default function SignUpScreen({ navigation }: Props) {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-  const [loading, setLoading] = useState(false);
+export default function SignUpScreen({ navigation }: Props): React.JSX.Element {
+  const [email, setEmail] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
+  const [confirmPassword, setConfirmPassword] = useState<string>('');
+  const [loading, setLoading] = useState<boolean>(false);
 
-  const handleSignUp = async () => {
+  const handleSignUp = async (): Promise<void> => {
     if (!email || !password || !confirmPassword) {
       Alert.alert('Error', 'Please fill in all fields');
       return;

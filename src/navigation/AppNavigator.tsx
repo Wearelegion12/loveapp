@@ -1,4 +1,3 @@
-// src/navigation/AppNavigator.tsx
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import type { User } from 'firebase/auth';
@@ -13,30 +12,18 @@ type AppNavigatorProps = {
   user: User | null;
 };
 
-export default function AppNavigator({ user }: AppNavigatorProps) {
+export default function AppNavigator({ user }: AppNavigatorProps): React.JSX.Element {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
       {!user ? (
         // Auth screens - no user logged in
         <>
-          <Stack.Screen 
-            name="Login" 
-            component={LoginScreen} 
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen 
-            name="SignUp" 
-            component={SignUpScreen} 
-            options={{ headerShown: false }}
-          />
+          <Stack.Screen name="Login" component={LoginScreen} />
+          <Stack.Screen name="SignUp" component={SignUpScreen} />
         </>
       ) : (
         // App screens - user is logged in
-        <Stack.Screen 
-          name="Home" 
-          component={HomeScreen} 
-          options={{ headerShown: false }}
-        />
+        <Stack.Screen name="Home" component={HomeScreen} />
       )}
     </Stack.Navigator>
   );

@@ -1,4 +1,3 @@
-// src/screens/HomeScreen.tsx
 import React from 'react';
 import {
   View,
@@ -10,8 +9,8 @@ import {
 import { signOut } from 'firebase/auth';
 import { auth } from '../config/firebase';
 
-export default function HomeScreen() {
-  const handleLogout = async () => {
+export default function HomeScreen(): React.JSX.Element {
+  const handleLogout = async (): Promise<void> => {
     Alert.alert(
       'Logout',
       'Are you sure you want to logout?',

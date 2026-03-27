@@ -1,8 +1,7 @@
-// src/screens/LoadingScreen.tsx
 import React from 'react';
 import { View, Text, ActivityIndicator, StyleSheet } from 'react-native';
 
-export default function LoadingScreen() {
+export default function LoadingScreen(): React.JSX.Element {
   return (
     <View style={styles.container}>
       <ActivityIndicator size="large" color="#FF69B4" />
